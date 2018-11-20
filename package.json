@@ -1,0 +1,21 @@
+{
+  "name": "helper",
+  "version": "1.0.0",
+  "description": "A collection of useful functions",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeroentvb/helper.git"
+  },
+  "keywords": [
+    "helper",
+    "functions"
+  ],
+  "author": "jeroentvb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeroentvb/helper/issues"
+  },
+  "homepage": "https://github.com/jeroentvb/helper#readme"
+}
