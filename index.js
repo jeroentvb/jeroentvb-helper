@@ -1,5 +1,6 @@
 class Helper {
   static stringify (item) {
+    if (typeof item !== 'string') throw new Error(`Error while stringifying: ${item} is already a string`)
     return JSON.stringify(item, null, 4)
   }
 
