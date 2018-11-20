@@ -1,5 +1,5 @@
 {
-  "name": "helper",
+  "name": "jeroentvb-helper",
   "version": "1.0.0",
   "description": "A collection of useful functions",
   "main": "index.js",
