@@ -8,7 +8,7 @@ npm install jeroentvb/helper
 
 ## Usage
 ```js
-const Helper = require('helper')
+const Helper = require('jeroentvb-helper')
 ```
 
 ## Functions
@@ -26,7 +26,7 @@ Object or array. This will be exported to the contents of the file .
 ```js
 Helper.stringify(item)
 ```
-Returns an object, array or anything in form of a nicely formatted, readable string.  
+Returns an object, array or anything in form of a nicely formatted, readable string (instead of a single line string). Useful for logging to the console. 
 
 **item**  
 The object, array or something else you want to transform into a string.  
