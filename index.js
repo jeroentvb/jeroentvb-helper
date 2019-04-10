@@ -13,7 +13,16 @@ function exportToFile (name, item) {
   })
 }
 
+function log (item) {
+  if (typeof item === 'object') {
+    console.log({ item })
+  } else {
+    console.log(item)
+  }
+}
+
 module.exports = {
   stringify,
-  exportToFile
+  exportToFile,
+  log
 }
