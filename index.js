@@ -3,13 +3,15 @@ function stringify (item) {
   return JSON.stringify(item, null, 4)
 }
 
-function exportToFile (name, item) {
+function exportToFile (name, item, verbose = true) {
   if (name === undefined || item === undefined) throw new Error('Error while exporting: parameters not defined')
   if (typeof item !== 'string') item = stringify(item)
+
   const fs = require('fs')
+
   fs.writeFile(name + '-export.json', item, err => {
     if (err) throw err
-    console.log(`${name}-export.json written`)
+    if (verbose) console.log(`${name}-export.json written`)
   })
 }
 

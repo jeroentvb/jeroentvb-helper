@@ -13,7 +13,7 @@ const helper = require('jeroentvb-helper')
 
 ## Functions
 ```js
-helper.exportToFile(name, item)
+helper.exportToFile(name, item, verbose)
 ```
 Exports an object or array to a .json file in the root of a project.  
 
@@ -21,7 +21,11 @@ Exports an object or array to a .json file in the root of a project.
 A string. The name the exported file will have.  
 
 **item**  
-Object or array. This will be exported to the contents of the file .
+Object or array. This will be exported to the contents of the file.  
+
+**verbose**  
+Optional  
+If set to `false`, nothing will be logged to the console.
 
 ```js
 helper.stringify(item)
@@ -30,3 +34,11 @@ Returns an object, array or anything in form of a nicely formatted, readable str
 
 **item**  
 The object, array or something else you want to transform into a string.  
+
+```js
+helper.log(item)
+```
+Logs an item to the console. If it's an object it will be made a little more readable, instead of collapsed.
+
+**item**  
+Object that you want to log to the console.
