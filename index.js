@@ -1,18 +1,22 @@
+const utils = require('./modules/utils')
+
 function stringify (item) {
   if (typeof item === 'string') throw new Error(`Error while stringifying: ${item} is already a string`)
   return JSON.stringify(item, null, 4)
 }
 
-function exportToFile (name, item, verbose = true) {
+function json (name, item, verbose) {
   if (name === undefined || item === undefined) throw new Error('Error while exporting: parameters not defined')
   if (typeof item !== 'string') item = stringify(item)
 
-  const fs = require('fs')
+  utils.writeFile(`${name}-export.json`, item, verbose)
+}
 
-  fs.writeFile(name + '-export.json', item, err => {
-    if (err) throw err
-    if (verbose) console.log(`${name}-export.json written`)
-  })
+function text (name, item, verbose) {
+  if (name === undefined || item === undefined) throw new Error('Error while exporting: parameters not defined')
+  if (typeof item !== 'string') item = stringify(item)
+
+  utils.writeFile(`${name}-export.txt`, item, verbose)
 }
 
 function log (item) {
@@ -25,6 +29,10 @@ function log (item) {
 
 module.exports = {
   stringify,
-  exportToFile,
+  export: {
+    json,
+    text,
+    custom: utils.writeFile
+  },
   log
 }
