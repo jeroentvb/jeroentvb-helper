@@ -9,14 +9,26 @@ function json (name, item, verbose) {
   if (name === undefined || item === undefined) throw new Error('Error while exporting: parameters not defined')
   if (typeof item !== 'string') item = stringify(item)
 
-  utils.writeFile(`${name}-export.json`, item, verbose)
+  utils.checkExportFolder()
+
+  return utils.writeFile(`${name}-export.json`, item, verbose)
 }
 
 function text (name, item, verbose) {
   if (name === undefined || item === undefined) throw new Error('Error while exporting: parameters not defined')
   if (typeof item !== 'string') item = stringify(item)
 
-  utils.writeFile(`${name}-export.txt`, item, verbose)
+  utils.checkExportFolder()
+
+  return utils.writeFile(`exports/${name}-export.txt`, item, verbose)
+}
+
+function custom (name, item, verbose) {
+  if (name === undefined || item === undefined) throw new Error('Error while exporting: parameters not defined')
+
+  utils.checkExportFolder()
+
+  return utils.writeFile(`exports/${name}-export.txt`, item, verbose)
 }
 
 function log (item) {
@@ -27,12 +39,16 @@ function log (item) {
   }
 }
 
+text('testing', 'asdasdasd')
+
 module.exports = {
   stringify,
-  export: {
+  exportFile: {
     json,
     text,
-    custom: utils.writeFile
+    custom,
   },
-  log
+  log,
+  writeFile: utils.writeFile,
+  mkDir: utils.mkDir
 }
