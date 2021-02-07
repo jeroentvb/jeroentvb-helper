@@ -41,7 +41,7 @@ function log (item) {
 
 module.exports = {
   stringify,
-  exportFile: {
+  export: {
     json,
     text,
     custom,
