@@ -11,7 +11,7 @@ function json (name, item, verbose) {
 
   utils.checkExportFolder()
 
-  return utils.writeFile(`${name}-export.json`, item, verbose)
+  return utils.writeFile(`exports/${name}-export.json`, item, verbose)
 }
 
 function text (name, item, verbose) {
