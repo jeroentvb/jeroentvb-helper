@@ -39,8 +39,6 @@ function log (item) {
   }
 }
 
-text('testing', 'asdasdasd')
-
 module.exports = {
   stringify,
   exportFile: {
