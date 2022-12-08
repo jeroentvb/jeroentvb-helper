@@ -48,5 +48,6 @@ module.exports = {
   },
   log,
   writeFile: utils.writeFile,
+   readFile: utils.readFile,
   mkDir: utils.mkDir
 }

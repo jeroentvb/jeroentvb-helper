@@ -1,5 +1,6 @@
 
 declare function writeFile (path: string, item: any, verbose?: boolean): Promise<string>
+declare function readFile <T = any>(path: string, verbose?: boolean): Promise<T>
 declare function mkDir (path: string, verbose?: boolean): Promise<string>
 
 declare function json (name: string, item: any, verbose?: boolean): Promise<string>
@@ -18,7 +19,8 @@ declare const _module: {
   }
   log: typeof log
   writeFile: typeof writeFile
-  mkDir: typeof mkDir
+  mkDir: typeof mkDir,
+  readFile: typeof readFile
 }
 
 export default _module
