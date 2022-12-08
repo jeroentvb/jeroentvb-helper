@@ -1,6 +1,6 @@
 
 declare function writeFile (path: string, item: any, verbose?: boolean): Promise<string>
-declare function readFile <T = any>(path: string, verbose?: boolean): Promise<T>
+declare function readFile <T = string>(path: string, verbose?: boolean): Promise<T>
 declare function mkDir (path: string, verbose?: boolean): Promise<string>
 
 declare function json (name: string, item: any, verbose?: boolean): Promise<string>
